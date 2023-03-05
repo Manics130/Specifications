@@ -111,7 +111,7 @@ namespace Specifications
             if (dropdown.Items.Contains(defaultName) && (dropdown.Text == "" || dropdown.Text != defaultName))
             {
                 //dropdown.SelectedText = "";
-                dropdown.Text = defaultName;
+                dropdown.Text = defaultName;            
             }
         }
 
