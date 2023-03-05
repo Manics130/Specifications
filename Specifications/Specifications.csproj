@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="XMLDATASHEET\" />
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
 
