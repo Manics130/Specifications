@@ -1,13 +1,9 @@
 ﻿using Specifications.DataHolder;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms.VisualStyles;
-using System.Xml;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace Specifications
@@ -140,11 +136,11 @@ namespace Specifications
             {
                 Data data = XMLData[i];
 
-                string[] elements = data.exclusionString.Split(elementSplit, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries); //split elements
+                string[] elements = data.exclusionString.Split(elementSplit, StringSplitOptions.RemoveEmptyEntries ); //split elements
                 foreach(var element in elements)
                 {
                     string searchAttribute = "";
-                    List<string> exclusionsIDString = element.Split(IdSplit,StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList(); // split element ID's
+                    List<string> exclusionsIDString = element.Split(IdSplit,StringSplitOptions.RemoveEmptyEntries).ToList(); // split element ID's
                     searchAttribute = exclusionsIDString[0];
                     exclusionsIDString.RemoveAt(0);
 
@@ -194,11 +190,11 @@ namespace Specifications
             {
                 Data data = XMLData[i];
 
-                string[] elements = data.defaultItemsString.Split(elementSplit, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries); //split elements
+                string[] elements = data.defaultItemsString.Split(elementSplit, StringSplitOptions.RemoveEmptyEntries); //split elements
                 foreach (var element in elements)
                 {
                     string searchAttribute = "";
-                    List<string> DefaultsIDString = element.Split(IdSplit, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList(); // split element ID's
+                    List<string> DefaultsIDString = element.Split(IdSplit, StringSplitOptions.RemoveEmptyEntries).ToList(); // split element ID's
                     searchAttribute = DefaultsIDString[0];
                     DefaultsIDString.RemoveAt(0);
 
