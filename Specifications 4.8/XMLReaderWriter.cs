@@ -106,15 +106,16 @@ namespace Specifications
                     element.Attribute(TEXTCOLOUR_ATTRIBUTE).Value.ToString() : "";
 
                 string exclusionString = "";
-                string DefaultsString = "";
+                string defaultsString = "";
 
                 exclusionString = element.Attribute(EXCLUSIONS_ATTRIBUTE) != null ?
                 element.Attribute(EXCLUSIONS_ATTRIBUTE).Value.ToString() : "";
 
-                DefaultsString = element.Attribute(DEFAULTITEMS_ATTRIBUTE) != null ?
+                defaultsString = element.Attribute(DEFAULTITEMS_ATTRIBUTE) != null ?
                     element.Attribute(DEFAULTITEMS_ATTRIBUTE).Value.ToString() : "";
-                
 
+                exclusionString = exclusionString.RemoveWhitespace();
+                defaultsString = defaultsString.RemoveWhitespace();
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
 
                 //Convert string ID to Int ID
@@ -122,11 +123,14 @@ namespace Specifications
                 int.TryParse(idString, out id);
 
                 //Save Data
-                data.Add(new Data(attribute ,id, name, prefix, exclusionString, new List<Data>(0), DefaultsString, new List<Data>(0), textColour)); 
+                data.Add(new Data(attribute ,id, name, prefix, exclusionString, new List<Data>(0), defaultsString, new List<Data>(0), textColour)); 
             }
             return data;
         }
-
+        private static string RemoveWhitespace(this string str)
+        {
+            return string.Join("", str.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
+        }
         private static void CalculateExclusions()
         {
             char[] elementSplit = new char[] {';' };

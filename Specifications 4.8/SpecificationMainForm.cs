@@ -55,10 +55,12 @@ namespace Specifications_4._8
             data.SyphonDropdownData(XMLReaderWriter.BEADINGTYPE_ELEMENT, ref BeadingType_dropdown);
             data.SyphonDropdownData(XMLReaderWriter.GLASSTYPE_ELEMENT, ref GlassType_dropdown);
 
+
             data.ExclusionFilter(ref m_Exclusions, ref Placements_dropdown, ref ItemTypes_dropdown, ref ViewedFrom_dropdown,
                 ref OpeningSide_dropdown, ref BeadingSide_dropdown, ref MasterLeaf_dropdown, ref FrameColour_dropdown,
                 ref IronFinish_dropdown, ref Ironmongery_dropdown, ref LockType_dropdown, ref HingeType_dropdown,
                 ref BeadingType_dropdown, ref GlassType_dropdown);
+
         }
 
         private void Placements_dropdown_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,6 +70,16 @@ namespace Specifications_4._8
 
         private void ItemTypes_dropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
+            GenerateDropdown();
+        }
+
+        private void DropdownList_Changed(object sender, EventArgs e)
+        {
+            ComboBox dropdown = (ComboBox)sender;
+            data.AddDefaultValues(ref dropdown, ref Placements_dropdown, ref ItemTypes_dropdown, ref ViewedFrom_dropdown,
+                ref OpeningSide_dropdown, ref BeadingSide_dropdown, ref MasterLeaf_dropdown, ref FrameColour_dropdown,
+                ref IronFinish_dropdown, ref Ironmongery_dropdown, ref LockType_dropdown, ref HingeType_dropdown,
+                ref BeadingType_dropdown, ref GlassType_dropdown);
             GenerateDropdown();
         }
     }

@@ -70,6 +70,7 @@
             this.BeadingType_dropdown.Size = new System.Drawing.Size(220, 21);
             this.BeadingType_dropdown.TabIndex = 58;
             this.BeadingType_dropdown.ValueMember = "Internal";
+            this.BeadingType_dropdown.SelectedIndexChanged += new System.EventHandler(this.DropdownList_Changed);
             // 
             // BeadingType_lbl
             // 
@@ -88,6 +89,7 @@
             this.GlassType_dropdown.Name = "GlassType_dropdown";
             this.GlassType_dropdown.Size = new System.Drawing.Size(220, 21);
             this.GlassType_dropdown.TabIndex = 56;
+            this.GlassType_dropdown.SelectedIndexChanged += new System.EventHandler(this.DropdownList_Changed);
             // 
             // GlassType_lbl
             // 
@@ -106,6 +108,7 @@
             this.HingeType_dropdown.Name = "HingeType_dropdown";
             this.HingeType_dropdown.Size = new System.Drawing.Size(220, 21);
             this.HingeType_dropdown.TabIndex = 54;
+            this.HingeType_dropdown.SelectedIndexChanged += new System.EventHandler(this.DropdownList_Changed);
             // 
             // HingeType_lbl
             // 
@@ -124,6 +127,7 @@
             this.OpeningSide_dropdown.Name = "OpeningSide_dropdown";
             this.OpeningSide_dropdown.Size = new System.Drawing.Size(220, 21);
             this.OpeningSide_dropdown.TabIndex = 51;
+            this.OpeningSide_dropdown.SelectedIndexChanged += new System.EventHandler(this.DropdownList_Changed);
             // 
             // OpenSide_lbl
             // 
@@ -142,6 +146,7 @@
             this.LockType_dropdown.Name = "LockType_dropdown";
             this.LockType_dropdown.Size = new System.Drawing.Size(220, 21);
             this.LockType_dropdown.TabIndex = 50;
+            this.LockType_dropdown.SelectedIndexChanged += new System.EventHandler(this.DropdownList_Changed);
             // 
             // LockType_lbl
             // 
@@ -160,6 +165,7 @@
             this.Ironmongery_dropdown.Name = "Ironmongery_dropdown";
             this.Ironmongery_dropdown.Size = new System.Drawing.Size(220, 21);
             this.Ironmongery_dropdown.TabIndex = 47;
+            this.Ironmongery_dropdown.SelectedIndexChanged += new System.EventHandler(this.DropdownList_Changed);
             // 
             // Ironmongery_lbl
             // 
@@ -178,6 +184,7 @@
             this.IronFinish_dropdown.Name = "IronFinish_dropdown";
             this.IronFinish_dropdown.Size = new System.Drawing.Size(220, 21);
             this.IronFinish_dropdown.TabIndex = 46;
+            this.IronFinish_dropdown.SelectedIndexChanged += new System.EventHandler(this.DropdownList_Changed);
             // 
             // IronFinish_lbl
             // 
@@ -196,6 +203,7 @@
             this.FrameColour_dropdown.Name = "FrameColour_dropdown";
             this.FrameColour_dropdown.Size = new System.Drawing.Size(220, 21);
             this.FrameColour_dropdown.TabIndex = 43;
+            this.FrameColour_dropdown.SelectedIndexChanged += new System.EventHandler(this.DropdownList_Changed);
             // 
             // FrameColour_lbl
             // 
@@ -214,6 +222,7 @@
             this.MasterLeaf_dropdown.Name = "MasterLeaf_dropdown";
             this.MasterLeaf_dropdown.Size = new System.Drawing.Size(220, 21);
             this.MasterLeaf_dropdown.TabIndex = 42;
+            this.MasterLeaf_dropdown.SelectedIndexChanged += new System.EventHandler(this.DropdownList_Changed);
             // 
             // MasterLeaf_lbl
             // 
@@ -232,6 +241,7 @@
             this.BeadingSide_dropdown.Name = "BeadingSide_dropdown";
             this.BeadingSide_dropdown.Size = new System.Drawing.Size(220, 21);
             this.BeadingSide_dropdown.TabIndex = 39;
+            this.BeadingSide_dropdown.SelectedIndexChanged += new System.EventHandler(this.DropdownList_Changed);
             // 
             // BeadingSide_lbl
             // 
@@ -250,6 +260,7 @@
             this.ViewedFrom_dropdown.Name = "ViewedFrom_dropdown";
             this.ViewedFrom_dropdown.Size = new System.Drawing.Size(220, 21);
             this.ViewedFrom_dropdown.TabIndex = 37;
+            this.ViewedFrom_dropdown.SelectedIndexChanged += new System.EventHandler(this.DropdownList_Changed);
             // 
             // ViewedFrom_lbl
             // 
@@ -268,7 +279,7 @@
             this.ItemTypes_dropdown.Name = "ItemTypes_dropdown";
             this.ItemTypes_dropdown.Size = new System.Drawing.Size(220, 21);
             this.ItemTypes_dropdown.TabIndex = 36;
-            this.ItemTypes_dropdown.SelectedIndexChanged += new System.EventHandler(this.ItemTypes_dropdown_SelectedIndexChanged);
+            this.ItemTypes_dropdown.SelectedIndexChanged += new System.EventHandler(this.DropdownList_Changed);
             // 
             // Type_lbl
             // 
@@ -294,7 +305,7 @@
             this.Placements_dropdown.Name = "Placements_dropdown";
             this.Placements_dropdown.Size = new System.Drawing.Size(220, 21);
             this.Placements_dropdown.TabIndex = 35;
-            this.Placements_dropdown.SelectedIndexChanged += new System.EventHandler(this.Placements_dropdown_SelectedIndexChanged);
+            this.Placements_dropdown.SelectedIndexChanged += new System.EventHandler(this.DropdownList_Changed);
             // 
             // Quantity_lbl
             // 

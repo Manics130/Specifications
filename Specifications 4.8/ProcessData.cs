@@ -277,28 +277,30 @@ namespace Specifications_4._8
                 }
             }
         }
-        private void AddDefaultValues(ref ComboBox dropdown)
+        public void AddDefaultValues(ref ComboBox currentDropdown, ref ComboBox placement, ref ComboBox itemTypes, ref ComboBox viewedfrom, ref ComboBox openingSides,
+            ref ComboBox beadingSides, ref ComboBox masterLeafs, ref ComboBox frameColours, ref ComboBox ironFinishs, ref ComboBox ironMongerys,
+            ref ComboBox hingeTypes, ref ComboBox lockTypes, ref ComboBox beadingTypes, ref ComboBox glassTypes)
         {
-            string selectedText = dropdown.Text;
+            string selectedText = currentDropdown.Text;
             if (selectedText != "")
             {
                 Data selectedData = selectedText == null ? new Data() : XMLReaderWriter.XMLData.Find(item => item.name == selectedText);
                 foreach (var defaultItem in selectedData.defaultItems)
                 {
 
-                    /*DefaultCheck(ref Placements_dropdown, defaultItem.name);
-                    DefaultCheck(ref ItemTypes_dropdown, defaultItem.name);
-                    DefaultCheck(ref ViewedFrom_dropdown, defaultItem.name);
-                    DefaultCheck(ref OpeningSide_dropdown, defaultItem.name);
-                    DefaultCheck(ref BeadingSide_dropdown, defaultItem.name);
-                    DefaultCheck(ref MasterLeaf_dropdown, defaultItem.name);
-                    DefaultCheck(ref FrameColour_dropdown, defaultItem.name);
-                    DefaultCheck(ref IronFinish_dropdown, defaultItem.name);
-                    DefaultCheck(ref Ironmongery_dropdown, defaultItem.name);
-                    DefaultCheck(ref HingeType_dropdown, defaultItem.name);
-                    DefaultCheck(ref LockType_dropdown, defaultItem.name);
-                    DefaultCheck(ref BeadingType_dropdown, defaultItem.name);
-                    DefaultCheck(ref GlassType_dropdown, defaultItem.name);*/
+                    DefaultCheck(ref placement, defaultItem.name);
+                    DefaultCheck(ref itemTypes, defaultItem.name);
+                    DefaultCheck(ref viewedfrom, defaultItem.name);
+                    DefaultCheck(ref openingSides, defaultItem.name);
+                    DefaultCheck(ref beadingSides, defaultItem.name);
+                    DefaultCheck(ref masterLeafs, defaultItem.name);
+                    DefaultCheck(ref frameColours, defaultItem.name);
+                    DefaultCheck(ref ironFinishs, defaultItem.name);
+                    DefaultCheck(ref ironMongerys, defaultItem.name);
+                    DefaultCheck(ref hingeTypes, defaultItem.name);
+                    DefaultCheck(ref lockTypes, defaultItem.name);
+                    DefaultCheck(ref beadingTypes, defaultItem.name);
+                    DefaultCheck(ref glassTypes, defaultItem.name);
                 }
             }
         }
