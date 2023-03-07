@@ -108,14 +108,13 @@
     <LockType id="1" name="Standard 5 Lever Lock"></LockType>
     <LockType id="2" name="Eurospec lock"></LockType>
     <LockType id="3" name="Multipoint Locking System"></LockType>
+    <LockType id="4" name="Eurospec Fire Latch" exclusions="HingeType(0,2)" defaults="HingeType(1)"></LockType>
   </LockTypes>
 
   <BeadingTypes>
     <BeadingType id="0" name="Silicon"></BeadingType>
     <BeadingType id="1" name="Aluminium Type A"></BeadingType>
-    <!--external only-->
     <BeadingType id="2" name="Aluminium Type B"></BeadingType>
-    <!--internal only-->
     <BeadingType id="3" name="Fire Aluminium"></BeadingType>
     <BeadingType id="4" name="Fire Steel"></BeadingType>
     <BeadingType id="5" name="Fire Silicon"></BeadingType>
