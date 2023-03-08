@@ -61,8 +61,12 @@
             this.Specification_tab = new System.Windows.Forms.TabControl();
             this.Specifications_tab = new System.Windows.Forms.TabPage();
             this.ViewData_tab = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ConsoleLine = new System.Windows.Forms.Label();
             this.Specification_tab.SuspendLayout();
             this.Specifications_tab.SuspendLayout();
+            this.ViewData_tab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // BeadingType_dropdown
@@ -398,6 +402,8 @@
             // 
             // ViewData_tab
             // 
+            this.ViewData_tab.Controls.Add(this.ConsoleLine);
+            this.ViewData_tab.Controls.Add(this.dataGridView1);
             this.ViewData_tab.Location = new System.Drawing.Point(4, 22);
             this.ViewData_tab.Name = "ViewData_tab";
             this.ViewData_tab.Padding = new System.Windows.Forms.Padding(3);
@@ -405,6 +411,26 @@
             this.ViewData_tab.TabIndex = 1;
             this.ViewData_tab.Text = "View Data";
             this.ViewData_tab.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 42);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(619, 351);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += SelectionChanged;
+            this.dataGridView1.MultiSelectChanged += MultiSelectionChanged;
+            this.dataGridView1.CellLeave += CellLeft;
+            // 
+            // ConsoleLine
+            // 
+            this.ConsoleLine.AutoSize = true;
+            this.ConsoleLine.Location = new System.Drawing.Point(35, 12);
+            this.ConsoleLine.Name = "ConsoleLine";
+            this.ConsoleLine.Size = new System.Drawing.Size(35, 13);
+            this.ConsoleLine.TabIndex = 1;
+            this.ConsoleLine.Text = "label1";
             // 
             // SpecificationMainForm
             // 
@@ -417,6 +443,9 @@
             this.Specification_tab.ResumeLayout(false);
             this.Specifications_tab.ResumeLayout(false);
             this.Specifications_tab.PerformLayout();
+            this.ViewData_tab.ResumeLayout(false);
+            this.ViewData_tab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -456,5 +485,7 @@
         private System.Windows.Forms.TabControl Specification_tab;
         private System.Windows.Forms.TabPage Specifications_tab;
         private System.Windows.Forms.TabPage ViewData_tab;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label ConsoleLine;
     }
 }

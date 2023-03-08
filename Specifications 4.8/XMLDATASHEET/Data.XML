@@ -9,7 +9,7 @@
 		(Optional Attributes)
 		Optional/Required for exclusions		(id="0") - start at 0 increment by 1 each time
 		Optional							(prefix="prefix") prefix if needed
-		Optional			TODO			(excludeelement="ElementName; ElementName") Excludes elements fully
+		Optional			TODO		(excludeelement="ElementName; ElementName") Excludes elements fully
 		Optional							(exclusions="ElementName(attributeId(0,1); attributeId(0,1))")
 		Optional							(defaults="ElementName(attributeID); ElementName(attributeID)") there can only be one id for each element type
 		Optional							(textcolour="red") if not used defaults to black.

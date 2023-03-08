@@ -1,6 +1,7 @@
 ﻿using Specifications.DataHolder;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -33,16 +34,31 @@ namespace Specifications
         public const string DEFAULTITEMS_ATTRIBUTE   = "defaults";
         public const string TEXTCOLOUR_ATTRIBUTE     = "textcolour";
 
+
+        public static DataSet DataBase = new DataSet();
+        public static DataTable dataTable;
+
         //Data holder
         public static List<Data> XMLData = new List<Data>();
 
         private const string ItemType = "ItemType";
+
+        //TODO create Dataset for eachtype?
 
         internal static void Read()
         {
             string path = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
             path += "\\Data.XML";
 
+             dataTable = new DataTable("XML Data");
+            //setup data colums
+            dataTable.Columns.Add("Attribute");
+            dataTable.Columns.Add("ID");
+            dataTable.Columns.Add("Name");
+            dataTable.Columns.Add("Prefix");
+            dataTable.Columns.Add("Exclusions");
+            dataTable.Columns.Add("Default Items");
+            dataTable.Columns.Add("Text Colours");
 
 
             if (File.Exists(path))
@@ -83,11 +99,12 @@ namespace Specifications
                 //Find and assign exclusions
                 CalculateExclusions();
                 CalculateDefaults();
+
+                DataBase.Tables.Add(dataTable);
             }
         }
         private static List<Data> CalculateData(string attribute, List<XElement> elements)
-        {
-            
+        {            
             List<Data> data = new List<Data>();
 
             for (int i = 0; i < elements.Count; i++)
@@ -123,7 +140,9 @@ namespace Specifications
                 int.TryParse(idString, out id);
 
                 //Save Data
-                data.Add(new Data(attribute ,id, name, prefix, exclusionString, new List<Data>(0), defaultsString, new List<Data>(0), textColour)); 
+                data.Add(new Data(attribute ,id, name, prefix, exclusionString, new List<Data>(0), defaultsString, new List<Data>(0), textColour));
+
+                dataTable.Rows.Add(attribute, id, name, prefix, exclusionString, defaultsString);
             }
             return data;
         }

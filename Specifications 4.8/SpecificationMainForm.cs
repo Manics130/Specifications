@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Specifications_4._8
 {
@@ -21,6 +22,8 @@ namespace Specifications_4._8
             InitializeComponent();
             XMLReaderWriter.Read();
             GenerateDropdown();
+            dataGridView1.DataSource = XMLReaderWriter.DataBase.Tables[0];
+            dataGridView1.MultiSelect = true;
         }
 
         private void GenerateDropdown()
@@ -81,6 +84,111 @@ namespace Specifications_4._8
                 ref IronFinish_dropdown, ref Ironmongery_dropdown, ref LockType_dropdown, ref HingeType_dropdown,
                 ref BeadingType_dropdown, ref GlassType_dropdown);
             GenerateDropdown();
+        }
+
+        int m_SelectedRow = -1;
+
+        List<int> SelectedIndexs = new List<int> ();
+
+        private void SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridView data = (DataGridView)sender;
+            var currentCell = data.CurrentCell;
+            if (data.SelectedCells.Count <= 1)//Single Select
+            {
+                if (currentCell.ColumnIndex == 4 && m_SelectedRow != currentCell.RowIndex)
+                {
+                    ConsoleLine.Text = "Selected " + currentCell.FormattedValue.ToString();
+                    SelectedIndexs = new List<int>();
+                    m_SelectedRow = currentCell.RowIndex;
+
+                    SelectExcluded(currentCell.FormattedValue.ToString(), data);
+                }
+            }
+            else
+            {
+                if (m_SelectedRow == -1)
+                    return;
+
+                if (!SelectedIndexs.Contains(currentCell.RowIndex))
+                {
+                    SelectedIndexs.Add(currentCell.RowIndex);
+                    ConsoleLine.Text = "Added " + currentCell.FormattedValue.ToString();
+                    data.Rows[currentCell.RowIndex].Selected = true;
+
+                }
+            }
+        }
+        private void SelectExcluded(string exclusionString, DataGridView data)
+        {
+            char[] elementSplit = new char[] { ';' };
+            char[] IdSplit = new char[] { '(', ',', ')' };
+
+            string[] elements = exclusionString.Split(elementSplit, StringSplitOptions.RemoveEmptyEntries); //split elements
+            foreach (var element in elements)
+            {
+                string searchAttribute = "";
+                List<string> exclusionsIDString = element.Split(IdSplit, StringSplitOptions.RemoveEmptyEntries).ToList(); // split element ID's
+                searchAttribute = exclusionsIDString[0];
+                exclusionsIDString.RemoveAt(0);
+
+                if (exclusionsIDString.Count < 0)
+                    break;
+
+                string[] actualExclusionIds = exclusionsIDString.ToArray();
+                foreach (var id in actualExclusionIds)
+                {
+                    for(int i = 0; i <dataGridView1.Rows.Count; i++)
+                    {
+                        var gridData = dataGridView1.Rows[i];
+
+                        if (gridData.Cells[0].FormattedValue.ToString() == searchAttribute && gridData.Cells[1].FormattedValue.ToString() == id)
+                        {
+                            if (!SelectedIndexs.Contains(gridData.Cells[1].RowIndex))
+                            {
+                                SelectedIndexs.Add(gridData.Cells[0].RowIndex);
+                                dataGridView1.Rows[gridData.Cells[0].RowIndex].Selected = true;
+                                break;
+                            }
+                        } 
+                    }
+                    /*data.Rows[FoundRow.Index].Selected = true;
+                    ConsoleLine.Text = FoundRow.Cells["ID"].FormattedValue.ToString();*/
+                }
+
+                
+            }
+        }
+        private void CellLeft(object sender, EventArgs e)
+        {
+            DataGridView data = (DataGridView)sender;
+            var currentCell = data.CurrentCell;
+
+            if (m_SelectedRow != -1)
+            {
+                if (data.Rows[m_SelectedRow].Selected)
+                {
+                    m_SelectedRow = -1;
+                    SelectedIndexs = new List<int>();
+                }
+            }
+
+            if (SelectedIndexs.Contains(currentCell.RowIndex))
+            {
+                if (currentCell.Selected)
+                    return;
+
+                SelectedIndexs.Remove(currentCell.RowIndex);
+                ConsoleLine.Text = "Removed " + currentCell.FormattedValue.ToString();
+                data.Rows[currentCell.RowIndex].Selected = false;
+            }
+        }
+        private void MultiSelectionChanged(object sender, EventArgs e)
+        {
+            DataGridView data = (DataGridView)sender;
+            /*if (m_SelectedRow == -1)
+                return;*/            
+            ConsoleLine.Text = "Multi Selected";
         }
     }
 }
