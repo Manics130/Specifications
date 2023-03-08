@@ -88,5 +88,8 @@
   <ItemGroup>
     <Content Include="XMLDATASHEET\Data.XML" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extentions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
