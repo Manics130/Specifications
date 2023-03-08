@@ -49,6 +49,12 @@
     <Compile Include="DataHolder\Data.cs" />
     <Compile Include="DataHolder\DefaultItemTypes.cs" />
     <Compile Include="DataHolder\ExclusionList.cs" />
+    <Compile Include="Extentions\Extentions.cs" />
+    <Compile Include="FileStructure\DataProcessing\DataSetProcessing.cs" />
+    <Compile Include="FileStructure\DataProcessing\XMLDataProcessing.cs" />
+    <Compile Include="FileStructure\Data\Attributes.cs" />
+    <Compile Include="FileStructure\Data\Elements.cs" />
+    <Compile Include="FileStructure\Data\XMLData.cs" />
     <Compile Include="ProcessData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,8 +94,6 @@
   <ItemGroup>
     <Content Include="XMLDATASHEET\Data.XML" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extentions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

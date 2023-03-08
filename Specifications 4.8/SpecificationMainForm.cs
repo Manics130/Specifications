@@ -1,5 +1,6 @@
 ﻿using Specifications;
 using Specifications.DataHolder;
+using Specifications_4._8.FileStructure.DataProcessing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,8 @@ namespace Specifications_4._8
         public SpecificationMainForm()
         {
             InitializeComponent();
+            XMLDataProcessing processor = new XMLDataProcessing();
+
             XMLReaderWriter.Read();
             GenerateDropdown();
             dataGridView1.DataSource = XMLReaderWriter.DataBase.Tables[0];

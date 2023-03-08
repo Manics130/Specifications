@@ -1,4 +1,5 @@
 ﻿using Specifications.DataHolder;
+using Specifications_4._8.Extentions;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -146,10 +147,7 @@ namespace Specifications
             }
             return data;
         }
-        private static string RemoveWhitespace(this string str)
-        {
-            return string.Join("", str.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
-        }
+        
         private static void CalculateExclusions()
         {
             char[] elementSplit = new char[] {';' };
