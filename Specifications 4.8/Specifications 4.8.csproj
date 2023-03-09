@@ -53,7 +53,7 @@
     <Compile Include="FileStructure\DataProcessing\DataSetProcessing.cs" />
     <Compile Include="FileStructure\DataProcessing\XMLDataProcessing.cs" />
     <Compile Include="FileStructure\Data\Attributes.cs" />
-    <Compile Include="FileStructure\Data\Elements.cs" />
+    <Compile Include="FileStructure\Data\Element.cs" />
     <Compile Include="FileStructure\Data\XMLData.cs" />
     <Compile Include="ProcessData.cs" />
     <Compile Include="Program.cs" />
