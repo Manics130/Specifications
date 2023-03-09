@@ -16,112 +16,116 @@
 	-->
 
   <Placements>
-    <Placement id="0" name="Internal" exclusions="ItemType(5,6,7,8,9,10); ViewType(0); BeadingType(1)" defaults="LockType(0); BeadingType(2)"></Placement>
-    <Placement id="1" name="External" exclusions="BeadingType(2)" defaults="LockType(1); BeadingType(0)"></Placement>
+    <Placement id="0" name="Internal" exclusions="ItemType(5,6,7,8,9,10); ViewType(0); BeadingType(1)" defaults="LockType(0); BeadingType(2)"/>
+    <Placement id="1" name="External" exclusions="BeadingType(2)" defaults="LockType(1); BeadingType(0)"/>
+	<Placement id="2" name="Sliding Doors" exclusions="ItemType(0,1,2,3,4,5,6,7,8,9,10)"/>
   </Placements>
 
   <ItemTypes>
     <!-- Sample 
-			<ItemType id="Increment by 1 starting from 0" name="Item Type Name"exclusions="ElementName(attributeIDs); ElementName(attributeIDs))"></ItemType>
+			<ItemType id="Increment by 1 starting from 0" name="Item Type Name"exclusions="ElementName(attributeIDs); ElementName(attributeIDs))"/>
 			using the exclusions will stop X elements from showing in lists		
 		-->
 
     <!--Doors-->
-    <!--<ItemType id="" name="" exclusions=""></ItemType>-->
-    <ItemType id="0" name="Single door" exclusions=""></ItemType>
-    <ItemType id="1" name="Double door" exclusions=""></ItemType>
-    <ItemType id="2" name="Single door with side screens" exclusions=""></ItemType>
-    <ItemType id="3" name="Double door with side screens" exclusions=""></ItemType>
-    <ItemType id="4" name="Single door with side screen" exclusions=""></ItemType>
+    <!--<ItemType id="" name="" exclusions=""/>-->
+    <ItemType id="0" name="Single door" exclusions=""/>
+    <ItemType id="1" name="Double door" exclusions=""/>
+    <ItemType id="2" name="Single door with side screens" exclusions=""/>
+    <ItemType id="3" name="Double door with side screens" exclusions=""/>
+    <ItemType id="4" name="Single door with side screen" exclusions=""/>
 
-    <ItemType id="5" name="Double door with side screens and top hung windows" exclusions=""></ItemType>
-    <ItemType id="6" name="Single door with side screens and top hung windows" exclusions=""></ItemType>
+    <ItemType id="5" name="Double door with side screens and top hung windows" exclusions=""/>
+    <ItemType id="6" name="Single door with side screens and top hung windows" exclusions=""/>
     <!--Windows-->
-    <!--<ItemType id="" name="" exclusions=""></ItemType>-->
-    <ItemType id="7" name="Fixed light" exclusions=""></ItemType>
-    <ItemType id="8" name="Side hung window" exclusions=""></ItemType>
-    <ItemType id="9" name="Top hung window" exclusions=""></ItemType>
-    <ItemType id="10" name="Multilight window" exclusions=""></ItemType>
+    <!--<ItemType id="" name="" exclusions=""/>-->
+    <ItemType id="7" name="Fixed light" exclusions=""/>
+    <ItemType id="8" name="Side hung window" exclusions=""/>
+    <ItemType id="9" name="Top hung window" exclusions=""/>
+    <ItemType id="10" name="Multilight window" exclusions=""/>
+	  
+	<!-- Sliding Doors -->
+	<ItemType id="50" name="Double Sliding Doors with side screen" exclusions=""/>
   </ItemTypes>
 
   <ViewTypes>
     <!-- Sample 
-			<ViewType id="Increment by 1 starting from 0" name="Item Type Name"exclusions="ElementName(attributeIDs); ElementName(attributeIDs))"></ItemType>
+			<ViewType id="Increment by 1 starting from 0" name="Item Type Name"exclusions="ElementName(attributeIDs); ElementName(attributeIDs))"/>
 			using the exclusions will stop X elements from showing in lists		
 		-->
-    <ViewType id="0" name="Outside"></ViewType>
-    <ViewType id="1" name="Inside"></ViewType>
+    <ViewType id="0" name="Outside"/>
+    <ViewType id="1" name="Inside"/>
   </ViewTypes>
 
   <OpeningSides>
-    <OpeningSide id="0" name="Inside"></OpeningSide>
-    <OpeningSide id="0" name="Outside"></OpeningSide>
+    <OpeningSide id="0" name="Inside"/>
+    <OpeningSide id="0" name="Outside"/>
   </OpeningSides>
 
   <BeadingSides>
-    <BeadingSide id="0" name="Outside"></BeadingSide>
+    <BeadingSide id="0" name="Outside"/>
   </BeadingSides>
 
   <MasterLeafSide>
-    <MasterLeaf id="0" name="Left Hand"></MasterLeaf>
-    <MasterLeaf id="1" name="Right Hand"></MasterLeaf>
+    <MasterLeaf id="0" name="Left Hand"/>
+    <MasterLeaf id="1" name="Right Hand"/>
   </MasterLeafSide>
 
   <FrameRalColours>
     <!-- Sample
-		<RalColour id="Ral ID" name="Ral Name"></RalColour>
+		<RalColour id="Ral ID" name="Ral Name"/>
 		-->
-    <RalColour id="0" name="7009 - Green Grey"></RalColour>
-    <RalColour id="1" name="7016 - Anthracite Grey"></RalColour>
-    <RalColour id="2" name="7021 - Black Grey"></RalColour>
-    <RalColour id="3" name="7024 - Graphite Grey"></RalColour>
-    <RalColour id="4" name="8019 - Grey Brown"></RalColour>
-    <RalColour id="5" name="9004 - Signal Black"></RalColour>
-    <RalColour id="6" name="9005 - Jet Black"></RalColour>
-    <RalColour id="7" name="9011 - Graphite Black"></RalColour>
-    <RalColour id="8" name="9016 - Traffic White"></RalColour>
+    <RalColour id="0" name="7009 - Green Grey"/>
+    <RalColour id="1" name="7016 - Anthracite Grey"/>
+    <RalColour id="2" name="7021 - Black Grey"/>
+    <RalColour id="3" name="7024 - Graphite Grey"/>
+    <RalColour id="4" name="8019 - Grey Brown"/>
+    <RalColour id="5" name="9004 - Signal Black"/>
+    <RalColour id="6" name="9005 - Jet Black"/>
+    <RalColour id="7" name="9011 - Graphite Black"/>
+    <RalColour id="8" name="9016 - Traffic White"/>
   </FrameRalColours>
 
   <IronFinishes>
-    <IronFinish id="0" name="Matt Black Finish" prefix="MBC"></IronFinish>
-    <IronFinish id="1" name="Satin Brass Unlacquered" prefix="SBU"></IronFinish>
-    <IronFinish id="2" name="Satin Chrome" prefix="SC"></IronFinish>
-    <IronFinish id="3" name="Antique Brass Unlacquered" prefix="ABU"></IronFinish>
-    <IronFinish id="4" name="Satin Nickel Bronzed" prefix="SNB"></IronFinish>
-    <IronFinish id="5" name="Dark Matt Bronze" prefix="DMB"></IronFinish>
+    <IronFinish id="0" name="Matt Black Finish" prefix="MBC"/>
+    <IronFinish id="1" name="Satin Brass Unlacquered" prefix="SBU"/>
+    <IronFinish id="2" name="Satin Chrome" prefix="SC"/>
+    <IronFinish id="3" name="Antique Brass Unlacquered" prefix="ABU"/>
+    <IronFinish id="4" name="Satin Nickel Bronzed" prefix="SNB"/>
+    <IronFinish id="5" name="Dark Matt Bronze" prefix="DMB"/>
   </IronFinishes>
 
   <MongeryTypes>
-    <MongeryType id="0" name="ALLART 6102 Sprung lever handle on round rose" exclusions=""></MongeryType>
-    <MongeryType id="1" name="ALLART 1867 Escutcheon with keyhole cover" exclusions=""></MongeryType>
-    <MongeryType id="2" name="ALLART 1885 Escutcheon with keyhole only" exclusions=""></MongeryType>
+    <MongeryType id="0" name="ALLART 6102 Sprung lever handle on round rose" exclusions=""/>
+    <MongeryType id="1" name="ALLART 1867 Escutcheon with keyhole cover" exclusions=""/>
+    <MongeryType id="2" name="ALLART 1885 Escutcheon with keyhole only" exclusions=""/>
   </MongeryTypes>
 
   <HingeTypes>
-    <HingeType id="0" name="Standard Butt Hinge"></HingeType>
-    <HingeType id="1" name="Steel Butt Hinge"></HingeType>
-    <HingeType id="2" name="Bullet Hinge"></HingeType>
+    <HingeType id="0" name="Standard Butt Hinge"/>
+    <HingeType id="1" name="Steel Butt Hinge"/>
+    <HingeType id="2" name="Bullet Hinge"/>
   </HingeTypes>
 
   <LockTypes>
-    <LockType id="0" name="Latch Only"></LockType>
-    <LockType id="1" name="Standard 5 Lever Lock"></LockType>
-    <LockType id="2" name="Eurospec lock"></LockType>
-    <LockType id="3" name="Multipoint Locking System"></LockType>
-    <LockType id="4" name="Eurospec Fire Latch" exclusions="HingeType(0,2)" defaults="HingeType(1)"></LockType>
+    <LockType id="0" name="Latch Only"/>
+    <LockType id="1" name="Standard 5 Lever Lock"/>
+    <LockType id="2" name="Eurospec lock"/>
+    <LockType id="3" name="Multipoint Locking System"/>
+    <LockType id="4" name="Eurospec Fire Latch" exclusions="HingeType(0,2)" defaults="HingeType(1)"/>
   </LockTypes>
 
   <BeadingTypes>
-    <BeadingType id="0" name="Silicon"></BeadingType>
-    <BeadingType id="1" name="Aluminium Type A"></BeadingType>
-    <BeadingType id="2" name="Aluminium Type B"></BeadingType>
-    <BeadingType id="3" name="Fire Aluminium"></BeadingType>
-    <BeadingType id="4" name="Fire Steel"></BeadingType>
-    <BeadingType id="5" name="Fire Silicon"></BeadingType>
+    <BeadingType id="0" name="Silicon"/>
+    <BeadingType id="1" name="Aluminium Type A"/>
+    <BeadingType id="2" name="Aluminium Type B"/>
+    <BeadingType id="3" name="Fire Aluminium"/>
+    <BeadingType id="4" name="Fire Steel"/>
+    <BeadingType id="5" name="Fire Silicon"/>
   </BeadingTypes>
 
   <GlassTypes>
-    <GlassType id="0" name="18mm Clear Toughened DGU"></GlassType>
+    <GlassType id="0" name="18mm Clear Toughened DGU"/>
   </GlassTypes>
 
 </Root>
