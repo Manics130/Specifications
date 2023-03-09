@@ -18,7 +18,7 @@
   <Placements>
     <Placement id="0" name="Internal" exclusions="ItemType(5,6,7,8,9,10); ViewType(0); BeadingType(1)" defaults="LockType(0); BeadingType(2)"/>
     <Placement id="1" name="External" exclusions="BeadingType(2)" defaults="LockType(1); BeadingType(0)"/>
-	<Placement id="2" name="Sliding Doors" exclusions="ItemType(1,2,3,4,5,6,7,8,9,10)" defaults="LockType(1); BeadingType(0)"/>
+	<Placement id="2" name="Sliding Doors" exclusions="ItemType(0,1,2,3,4,5,6,7,8,9,10)"/>
   </Placements>
 
   <ItemTypes>
