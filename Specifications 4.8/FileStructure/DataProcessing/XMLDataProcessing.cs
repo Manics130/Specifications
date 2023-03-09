@@ -40,21 +40,22 @@ namespace Specifications_4._8.FileStructure.DataProcessing
                 else if(result == DialogResult.Cancel) Application.Exit();
                 return;
             }
+            _document = XDocument.Load(PATH);
 
             List<XElement> data = new List<XElement>();
             data.AddRange(GetDescendants(Element.PLACEMENT));
-            data.AddRange(_document.Descendants(Element.ITEMTYPE).ToList());
-            data.AddRange(_document.Descendants(Element.VIEWTYPE).ToList());
-            data.AddRange(_document.Descendants(Element.OPENINGSIDE).ToList());
-            data.AddRange(_document.Descendants(Element.BEADINGSIDE).ToList());
-            data.AddRange(_document.Descendants(Element.MASTERLEAFSIDE).ToList());
-            data.AddRange(_document.Descendants(Element.FRAMERALCOLOUR).ToList());
-            data.AddRange(_document.Descendants(Element.IRONFINISH).ToList());
-            data.AddRange(_document.Descendants(Element.MONGERYTYPE).ToList());
-            data.AddRange(_document.Descendants(Element.HINGETYPE).ToList());
-            data.AddRange(_document.Descendants(Element.LOCKTYPE).ToList());
-            data.AddRange(_document.Descendants(Element.BEADINGTYPE).ToList());
-            data.AddRange(_document.Descendants(Element.GLASSTYPE).ToList());
+            data.AddRange(GetDescendants(Element.ITEMTYPE).ToList());
+            data.AddRange(GetDescendants(Element.VIEWTYPE).ToList());
+            data.AddRange(GetDescendants(Element.OPENINGSIDE).ToList());
+            data.AddRange(GetDescendants(Element.BEADINGSIDE).ToList());
+            data.AddRange(GetDescendants(Element.MASTERLEAFSIDE).ToList());
+            data.AddRange(GetDescendants(Element.FRAMERALCOLOUR).ToList());
+            data.AddRange(GetDescendants(Element.IRONFINISH).ToList());
+            data.AddRange(GetDescendants(Element.MONGERYTYPE).ToList());
+            data.AddRange(GetDescendants(Element.HINGETYPE).ToList());
+            data.AddRange(GetDescendants(Element.LOCKTYPE).ToList());
+            data.AddRange(GetDescendants(Element.BEADINGTYPE).ToList());
+            data.AddRange(GetDescendants(Element.GLASSTYPE).ToList());
 
 
         }
@@ -62,39 +63,39 @@ namespace Specifications_4._8.FileStructure.DataProcessing
         {
             char[] elementSplit = new char[] { ';' };
             char[] IdSplit = new char[] { '(', ',', ')' };
-            var data = _document.Descendants(elementName).ToList();
+            var data =  _document.Descendants(elementName).ToList();
 
             foreach(var element in data)
             {
-                string id = element.Attribute(Attributes.ID).ToString();
-                string name = element.Attribute(Attributes.NAME).ToString();
-                string prefix = element.Attribute(Attributes.PREFIX).ToString();
-                string exclusions = element.Attribute(Attributes.EXCLUSIONS).ToString();
-                string defaults = element.Attribute(Attributes.DEFAULTITEMS).ToString();
-                string textColour = element.Attribute(Attributes.TEXTCOLOUR).ToString();
+                string id = element.Attribute(Attributes.ID) != null ? element.Attribute(Attributes.ID).Value.ToString() : "";
+                string name = element.Attribute(Attributes.NAME) != null ? element.Attribute(Attributes.NAME).Value.ToString() : "";
+                string prefix = element.Attribute(Attributes.PREFIX) != null ? element.Attribute(Attributes.PREFIX).Value.ToString() : "";
+                string exclusions = element.Attribute(Attributes.EXCLUSIONS) != null ? element.Attribute(Attributes.EXCLUSIONS).Value.ToString() : "";
+                string defaults = element.Attribute(Attributes.DEFAULTITEMS) != null ? element.Attribute(Attributes.DEFAULTITEMS).Value.ToString() : "";
+                string textColour = element.Attribute(Attributes.TEXTCOLOUR) != null ? element.Attribute(Attributes.TEXTCOLOUR).Value.ToString() : "";
 
                 exclusions = exclusions.RemoveWhitespace();
                 defaults = defaults.RemoveWhitespace();
 
                 //Gets an array of attributes found in the exclusion list
+                var item = new XMLData(elementName, id, name, prefix, new List<(string, string)>(), new List<(string, string)>(), textColour);
+                
                 string[] exclusionAttributes =exclusions.Split(elementSplit,StringSplitOptions.RemoveEmptyEntries);
                 foreach (var exclusionAttribute in exclusionAttributes)
                 {
+                    string attribute = "";
                     List<string> exclusionIds = exclusionAttribute.Split(IdSplit,StringSplitOptions.RemoveEmptyEntries).ToList();
+                    attribute = exclusionIds[0];
                     exclusionIds.RemoveAt(0);
-                    if(exclusionIds.Count > 0)
+                    
+                    foreach(var exclusionId in exclusionIds)
                     {
-
+                        item.exclusionList.Add((attribute, exclusionId));
                     }
                 }
-                /*xmlData.Add(new XMLData
-                    (
-                    elementName,
-                    id,
-                    name,
-                    prefix,
+                            
 
-                    ));*/
+                xmlData.Add(item);
             }
 
             return data;
