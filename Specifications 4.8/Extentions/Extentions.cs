@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Specifications_4._8.Extentions
+namespace Specifications.Extentions
 {
     public static class Extentions
     {

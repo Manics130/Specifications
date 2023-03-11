@@ -1,5 +1,5 @@
 ﻿using Specifications.DataHolder;
-using Specifications_4._8.Extentions;
+using Specifications.Extentions;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -39,8 +39,8 @@ namespace Specifications
         public static DataSet DataBase = new DataSet();
         public static DataTable dataTable;
 
-        //Data holder
-        public static List<Data> XMLData = new List<Data>();
+        //SavedItemData holder
+        public static List<SavedItemData> XMLData = new List<SavedItemData>();
 
         private const string ItemType = "ItemType";
 
@@ -49,9 +49,9 @@ namespace Specifications
         internal static void Read()
         {
             string path = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
-            path += "\\Data.XML";
+            path += "\\SavedItemData.XML";
 
-             dataTable = new DataTable("XML Data");
+             dataTable = new DataTable("XML SavedItemData");
             //setup data colums
             dataTable.Columns.Add("Attribute");
             dataTable.Columns.Add("ID");
@@ -67,7 +67,7 @@ namespace Specifications
                 //Loading XML Document
                 XDocument xdoc = XDocument.Load(path);
 
-                //Finding Inital Data
+                //Finding Inital SavedItemData
                 var PlacementData       = xdoc.Descendants(PLACEMENT_ELEMENT).ToList();
                 var ItemTypesData       = xdoc.Descendants(ITEMTYPE_ELEMENT).ToList();
                 var ViewTypesData       = xdoc.Descendants(VIEWTYPE_ELEMENT).ToList();
@@ -82,7 +82,7 @@ namespace Specifications
                 var BeadingTypesData    = xdoc.Descendants(BEADINGTYPE_ELEMENT).ToList();
                 var GlassTypesData      = xdoc.Descendants(GLASSTYPE_ELEMENT).ToList();
 
-                //Find and assign Data
+                //Find and assign SavedItemData
                 XMLData.AddRange(CalculateData(PLACEMENT_ELEMENT, PlacementData));
                 XMLData.AddRange(CalculateData(ITEMTYPE_ELEMENT, ItemTypesData));
                 XMLData.AddRange(CalculateData(VIEWTYPE_ELEMENT, ViewTypesData));
@@ -104,9 +104,9 @@ namespace Specifications
                 DataBase.Tables.Add(dataTable);
             }
         }
-        private static List<Data> CalculateData(string attribute, List<XElement> elements)
+        private static List<SavedItemData> CalculateData(string attribute, List<XElement> elements)
         {            
-            List<Data> data = new List<Data>();
+            List<SavedItemData> data = new List<SavedItemData>();
 
             for (int i = 0; i < elements.Count; i++)
             {
@@ -140,8 +140,8 @@ namespace Specifications
                 int id = -1;
                 int.TryParse(idString, out id);
 
-                //Save Data
-                data.Add(new Data(attribute ,id, name, prefix, exclusionString, new List<Data>(0), defaultsString, new List<Data>(0), textColour));
+                //Save SavedItemData
+                data.Add(new SavedItemData(attribute ,id, name, prefix, exclusionString, new List<SavedItemData>(0), defaultsString, new List<SavedItemData>(0), textColour));
 
                 dataTable.Rows.Add(attribute, id, name, prefix, exclusionString, defaultsString);
             }
@@ -155,7 +155,7 @@ namespace Specifications
 
             for(int i = 0; i < XMLData.Count; i++)
             {
-                Data data = XMLData[i];
+                SavedItemData data = XMLData[i];
 
                 string[] elements = data.exclusionString.Split(elementSplit, StringSplitOptions.RemoveEmptyEntries ); //split elements
                 foreach(var element in elements)
@@ -184,13 +184,13 @@ namespace Specifications
                                 {
                                     if(exclusionAttribute.id == id)
                                     {
-                                        Data exclusionData = new Data(
+                                        SavedItemData exclusionData = new SavedItemData(
                                             exclusionAttribute.attribute,
                                             exclusionAttribute.id,
                                             exclusionAttribute.name, 
                                             exclusionAttribute.prefix, 
-                                            "",new List<Data>(),
-                                            "",new List<Data>());
+                                            "",new List<SavedItemData>(),
+                                            "",new List<SavedItemData>());
 
                                         data.exclusions.Add(exclusionData);
                                         break;
@@ -209,7 +209,7 @@ namespace Specifications
 
             for (int i = 0; i < XMLData.Count; i++)
             {
-                Data data = XMLData[i];
+                SavedItemData data = XMLData[i];
 
                 string[] elements = data.defaultItemsString.Split(elementSplit, StringSplitOptions.RemoveEmptyEntries); //split elements
                 foreach (var element in elements)
@@ -240,13 +240,13 @@ namespace Specifications
                         {
                             if(defaultAttributeData.id == defaultId)
                             {
-                                Data newDefaultData = new Data(
+                                SavedItemData newDefaultData = new SavedItemData(
                                     defaultAttributeData.attribute,
                                     defaultAttributeData.id,
                                     defaultAttributeData.name,
                                     defaultAttributeData.prefix,
-                                    "", new List<Data>(),
-                                    "", new List<Data>());
+                                    "", new List<SavedItemData>(),
+                                    "", new List<SavedItemData>());
                                 data.defaultItems.Add(newDefaultData);
                                 break;
                             }

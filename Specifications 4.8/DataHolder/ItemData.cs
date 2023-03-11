@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Specifications.DataHolder
 {
-    public struct Data
+    public struct SavedItemData
     {
         //public string displayName;
         public string attribute;
@@ -15,14 +15,14 @@ namespace Specifications.DataHolder
         public string name;
         public string prefix;
         public string exclusionString;        
-        public List<Data> exclusions;
+        public List<SavedItemData> exclusions;
 
         public string defaultItemsString;
-        public List<Data> defaultItems; 
+        public List<SavedItemData> defaultItems; 
         public Color textColour;
 
-        public Data(string attribute, int id, string name, string prefix, string exclusionString, List<Data> exclusions, 
-            string defaultItemsString, List<Data> defaultItems, string textColour="black")
+        public SavedItemData(string attribute, int id, string name, string prefix, string exclusionString, List<SavedItemData> exclusions, 
+            string defaultItemsString, List<SavedItemData> defaultItems, string textColour="black")
         {
             this.attribute = attribute;
             this.id = id;

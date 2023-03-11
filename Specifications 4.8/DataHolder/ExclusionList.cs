@@ -24,18 +24,18 @@ namespace Specifications.DataHolder
         public string selectedGlassType = "";
 
         //Currently Selected Dropdown items exclusions
-        public List<Data> selectedPlacementExclusions = new List<Data>();
-        public List<Data> selectedItemTypeExclusions = new List<Data>();
-        public List<Data> selectedViewTypesExclusions = new List<Data>();
-        public List<Data> selectedOpeningSidesExclusions = new List<Data>();
-        public List<Data> selectedBeadingSidesExclusions = new List<Data>();
-        public List<Data> selectedMasterLeafSidesExclusions = new List<Data>();
-        public List<Data> selectedFrameRalColourExclusions = new List<Data>();
-        public List<Data> selectedIronFinishesExclusions = new List<Data>();
-        public List<Data> selectedMongeryTypesExclusions = new List<Data>();
-        public List<Data> selectedHingeTypesExclusions = new List<Data>();
-        public List<Data> selectedLockTypesExclusions = new List<Data>();
-        public List<Data> selectedBeadingTypesExclusions = new List<Data>();
-        public List<Data> selectedGlassTypesExclusions = new List<Data>();
+        public List<SavedItemData> selectedPlacementExclusions = new List<SavedItemData>();
+        public List<SavedItemData> selectedItemTypeExclusions = new List<SavedItemData>();
+        public List<SavedItemData> selectedViewTypesExclusions = new List<SavedItemData>();
+        public List<SavedItemData> selectedOpeningSidesExclusions = new List<SavedItemData>();
+        public List<SavedItemData> selectedBeadingSidesExclusions = new List<SavedItemData>();
+        public List<SavedItemData> selectedMasterLeafSidesExclusions = new List<SavedItemData>();
+        public List<SavedItemData> selectedFrameRalColourExclusions = new List<SavedItemData>();
+        public List<SavedItemData> selectedIronFinishesExclusions = new List<SavedItemData>();
+        public List<SavedItemData> selectedMongeryTypesExclusions = new List<SavedItemData>();
+        public List<SavedItemData> selectedHingeTypesExclusions = new List<SavedItemData>();
+        public List<SavedItemData> selectedLockTypesExclusions = new List<SavedItemData>();
+        public List<SavedItemData> selectedBeadingTypesExclusions = new List<SavedItemData>();
+        public List<SavedItemData> selectedGlassTypesExclusions = new List<SavedItemData>();
     }
 }

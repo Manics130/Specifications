@@ -1,6 +1,6 @@
 ﻿using Specifications;
 using Specifications.DataHolder;
-using Specifications_4._8.FileStructure.DataProcessing;
+using Specifications.DataProcessing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace Specifications_4._8
+namespace Specifications
 {
     public partial class SpecificationMainForm : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace Specifications_4._8
+﻿namespace Specifications
 {
     partial class SpecificationMainForm
     {
@@ -409,7 +409,7 @@
             this.ViewData_tab.Padding = new System.Windows.Forms.Padding(3);
             this.ViewData_tab.Size = new System.Drawing.Size(645, 404);
             this.ViewData_tab.TabIndex = 1;
-            this.ViewData_tab.Text = "View Data";
+            this.ViewData_tab.Text = "View SavedItemData";
             this.ViewData_tab.UseVisualStyleBackColor = true;
             // 
             // dataGridView1

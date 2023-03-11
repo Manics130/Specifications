@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Specifications_4._8.FileStructure.DataProcessing
+namespace Specifications.DataProcessing
 {
     public static class DataSetProcessing
     {

@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Specifications.Data;
+using Specifications.Data.SaveLoad;
+using Specifications.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Specifications_4._8
+namespace Specifications
 {
     internal static class Program
     {
@@ -14,9 +17,14 @@ namespace Specifications_4._8
         [STAThread]
         static void Main()
         {
+            FileReferences.CreateDirectories(); //Create Folders in appdata
+            //Try loading Settings            
+            Settings.TryLoadSettings();
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SpecificationMainForm());
+            Application.Run(new MenuForm());
         }
     }
 }

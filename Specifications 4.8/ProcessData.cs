@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Specifications_4._8
+namespace Specifications
 {
     internal class ProcessData
     {  
@@ -82,7 +82,7 @@ namespace Specifications_4._8
             if (selectedText != "")
             {
                 //Run though all the cases
-                Data selectedData = selectedText == null ? new Data() : XMLReaderWriter.XMLData.Find(item => item.name == selectedText);
+                SavedItemData selectedData = selectedText == null ? new SavedItemData() : XMLReaderWriter.XMLData.Find(item => item.name == selectedText);
                 foreach (var exclusion in selectedData.exclusions)
                 {
                     var exclusionName = exclusion.name;
@@ -141,7 +141,7 @@ namespace Specifications_4._8
             UpdateExclusionList(ref exclusions, ref beadingTypes);
             UpdateExclusionList(ref exclusions, ref glassTypes);
         }
-        public void CreateExclusionList(ref ComboBox dropdown, ref string selectedDropdown, ref List<Data> exclusionList)
+        public void CreateExclusionList(ref ComboBox dropdown, ref string selectedDropdown, ref List<SavedItemData> exclusionList)
         {
             string selected = dropdown.Text;
             if (selected == "")
@@ -149,10 +149,10 @@ namespace Specifications_4._8
             if (selected != selectedDropdown)
             {
                 selectedDropdown = selected;
-                exclusionList = new List<Data>();
+                exclusionList = new List<SavedItemData>();
             }
 
-            Data selectedData = selected == "" ? new Data() : XMLReaderWriter.XMLData.Find(item => item.name == selected);
+            SavedItemData selectedData = selected == "" ? new SavedItemData() : XMLReaderWriter.XMLData.Find(item => item.name == selected);
             foreach (var exclusion in selectedData.exclusions)
             {
                 if (!exclusionList.Contains(exclusion))
@@ -210,7 +210,7 @@ namespace Specifications_4._8
         {
             //All current exclusions based on currently selected
 
-            var DataStore = new List<(string selectedText, List<Data> data)>()
+            var DataStore = new List<(string selectedText, List<SavedItemData> data)>()
             {
                 (exclusions.selectedPlacement, exclusions.selectedPlacementExclusions),
                 (exclusions.selectedItemType, exclusions.selectedItemTypeExclusions),
@@ -263,7 +263,7 @@ namespace Specifications_4._8
             FilterExclusions(ref dropdown, beadingTypes);
             FilterExclusions(ref dropdown, glassTypes);*/
         }
-        private void FilterExclusions(ref ComboBox dropdown, (string selectedText, List<Data> data) exclusions)
+        private void FilterExclusions(ref ComboBox dropdown, (string selectedText, List<SavedItemData> data) exclusions)
         {
 
             foreach (var item in exclusions.data)
@@ -284,7 +284,7 @@ namespace Specifications_4._8
             string selectedText = currentDropdown.Text;
             if (selectedText != "")
             {
-                Data selectedData = selectedText == null ? new Data() : XMLReaderWriter.XMLData.Find(item => item.name == selectedText);
+                SavedItemData selectedData = selectedText == null ? new SavedItemData() : XMLReaderWriter.XMLData.Find(item => item.name == selectedText);
                 foreach (var defaultItem in selectedData.defaultItems)
                 {
 

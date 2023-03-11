@@ -1,5 +1,5 @@
-﻿using Specifications_4._8.Extentions;
-using Specifications_4._8.FileStructure.Data;
+﻿using Specifications.Extentions;
+using Specifications.Data;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
 
-namespace Specifications_4._8.FileStructure.DataProcessing
+namespace Specifications.DataProcessing
 {
     public class XMLDataProcessing
     {
-        private string PATH = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\Data.XML";
+        private string PATH = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\SavedItemData.XML";
         private XDocument _document;
         public List<XMLData> xmlData = new List<XMLData>();
         public XMLDataProcessing()
@@ -25,7 +25,7 @@ namespace Specifications_4._8.FileStructure.DataProcessing
         }
 
         /// <summary>
-        /// Reads from the XML Data Sheet
+        /// Reads from the XML SavedItemData Sheet
         /// </summary>
         private void ReadXML()
         {
@@ -35,7 +35,7 @@ namespace Specifications_4._8.FileStructure.DataProcessing
             if(!File.Exists(PATH)) 
             { 
                 //Checks to see if XML file exists if it doesnt warnings will show
-                var result = MessageBox.Show(string.Format("Couldnt Find Data at {0}, Please make sure the XML file is stored in this location", PATH),"", MessageBoxButtons.RetryCancel); 
+                var result = MessageBox.Show(string.Format("Couldnt Find SavedItemData at {0}, Please make sure the XML file is stored in this location", PATH),"", MessageBoxButtons.RetryCancel); 
                 if(result == DialogResult.Retry) {ReadXML();return;}
                 else if(result == DialogResult.Cancel) Application.Exit();
                 return;
@@ -102,7 +102,7 @@ namespace Specifications_4._8.FileStructure.DataProcessing
         }
 
         /// <summary>
-        /// Writes to the XML Data Sheet
+        /// Writes to the XML SavedItemData Sheet
         /// </summary>
         private void WriteXML()
         {

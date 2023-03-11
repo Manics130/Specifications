@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Specifications_4._8.Properties
+namespace Specifications.Properties
 {
 
 
