@@ -11,7 +11,7 @@ using System.Xml.Serialization;
 
 namespace Specifications.Data.SaveLoad
 {
-    public static class Settings
+    public static class SettingsForm
     {
         public static SettingsData settingData;
 
@@ -21,7 +21,7 @@ namespace Specifications.Data.SaveLoad
             settingData = new SettingsData("New User");
 
 
-            if (File.Exists(FileReferences.AppData + FileReferences.Data + "Settings.dat"))
+            if (File.Exists(FileReferences.AppData + FileReferences.Data + "SettingsForm.dat"))
             {
                 LoadSettings();
             }
@@ -32,7 +32,7 @@ namespace Specifications.Data.SaveLoad
         }
         private static void LoadSettings()
         {
-            var doc = XDocument.Load(FileReferences.AppData + FileReferences.Data + "Settings.dat");
+            var doc = XDocument.Load(FileReferences.AppData + FileReferences.Data + "SettingsForm.dat");
 
             var decendants = doc.Descendants();
             var s = nameof(settingData.TechnicianName); 
@@ -52,7 +52,7 @@ namespace Specifications.Data.SaveLoad
 
 
             XmlSerializer writer = new XmlSerializer(typeof(SettingsData));
-            FileStream file = File.Create(FileReferences.AppData + FileReferences.Data + "Settings.dat");
+            FileStream file = File.Create(FileReferences.AppData + FileReferences.Data + "SettingsForm.dat");
 
             writer.Serialize(file, settings);
             file.Close();

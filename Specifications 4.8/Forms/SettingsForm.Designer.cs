@@ -64,7 +64,7 @@
             this.Settings_lbl.Name = "Settings_lbl";
             this.Settings_lbl.Size = new System.Drawing.Size(191, 52);
             this.Settings_lbl.TabIndex = 0;
-            this.Settings_lbl.Text = "Settings";
+            this.Settings_lbl.Text = "SettingsForm";
             // 
             // techName_lbl
             // 
@@ -138,7 +138,7 @@
             this.Name = "SettingsForm";
             this.Padding = new System.Windows.Forms.Padding(20);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.Text = "Settings ";
+            this.Text = "SettingsForm ";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

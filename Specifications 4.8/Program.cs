@@ -18,8 +18,8 @@ namespace Specifications
         static void Main()
         {
             FileReferences.CreateDirectories(); //Create Folders in appdata
-            //Try loading Settings            
-            Settings.TryLoadSettings();
+            //Try loading SettingsForm            
+            SettingsForm.TryLoadSettings();
 
 
             Application.EnableVisualStyles();

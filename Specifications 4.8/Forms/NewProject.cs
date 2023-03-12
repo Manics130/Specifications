@@ -18,7 +18,7 @@ namespace Specifications
             Location = new Point(Screen.PrimaryScreen.WorkingArea.X / 2 - (this.Size.Width / 2),
                 Screen.PrimaryScreen.WorkingArea.Y / 2 - (this.Size.Height / 2));
 
-            techname_txt.Text = Settings.settingData.TechnicianName;
+            techname_txt.Text = SettingsForm.settingData.TechnicianName;
         }
 
         private void openfile_btn_Click(object sender, EventArgs e)
