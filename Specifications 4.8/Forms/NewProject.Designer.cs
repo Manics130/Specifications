@@ -130,7 +130,7 @@
             // openfile_btn
             // 
             this.openfile_btn.BackColor = System.Drawing.SystemColors.Window;
-            this.openfile_btn.BackgroundImage = global::Specifications_4._8.Properties.Resources.folderIcon1;
+            this.openfile_btn.BackgroundImage = global::Specifications.Properties.Resources.folderIcon1;
             this.openfile_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.openfile_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openfile_btn.ForeColor = System.Drawing.Color.White;
@@ -210,7 +210,6 @@
             this.Name = "NewProject";
             this.Padding = new System.Windows.Forms.Padding(20);
             this.Text = "Create Project";
-            this.Load += new System.EventHandler(this.NewProject_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.folder_panel.ResumeLayout(false);

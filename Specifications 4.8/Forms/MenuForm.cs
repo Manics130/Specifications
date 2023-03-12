@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Specifications.Data.SaveLoad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,18 +22,28 @@ namespace Specifications.Forms
 
             newProject = new NewProject();
             settings = new SettingsForm();
+
+            techname_lbl.Text = Settings.settingData.TechnicianName;
         }
 
         private void CreateNewProject(object sender, EventArgs e)
         {
-            newProject.Show();
+            newProject.ShowDialog();
         }
 
         private void OpenSettings(object sender, EventArgs e)
         {            
-            settings.Show();
+            settings.ShowDialog();
         }
 
-        
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

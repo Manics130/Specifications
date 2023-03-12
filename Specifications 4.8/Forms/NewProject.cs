@@ -26,6 +26,7 @@ namespace Specifications
             openprojectfolder_dialog.ShowDialog();
             folderdirectory_lbl.Text = openprojectfolder_dialog.SelectedPath;
         }
+
         private void confirm_btn_Click(object sender, EventArgs e)
         {
 
