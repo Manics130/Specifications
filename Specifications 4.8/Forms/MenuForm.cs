@@ -23,7 +23,7 @@ namespace Specifications.Forms
             newProject = new NewProject();
             settings = new SettingsForm();
 
-            techname_lbl.Text = SettingsForm.settingData.TechnicianName;
+            techname_lbl.Text = Settings.settingData.TechnicianName;
         }
 
         private void CreateNewProject(object sender, EventArgs e)

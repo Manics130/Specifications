@@ -21,14 +21,14 @@ namespace Specifications.Forms
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
-            technicianName_txt.Text = SettingsForm.settingData.TechnicianName;
+            technicianName_txt.Text = Settings.settingData.TechnicianName;
         }
 
         private void SaveSettings(object sender, EventArgs e)
         {
             SettingsData setting = new SettingsData(technicianName_txt.Text);
 
-            SettingsForm.SaveSettings(setting);
+            Settings.SaveSettings(setting);
 
             this.Close();
         }

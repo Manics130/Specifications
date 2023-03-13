@@ -19,7 +19,7 @@ namespace Specifications
         {
             FileReferences.CreateDirectories(); //Create Folders in appdata
             //Try loading SettingsForm            
-            SettingsForm.TryLoadSettings();
+            Settings.TryLoadSettings();
 
 
             Application.EnableVisualStyles();

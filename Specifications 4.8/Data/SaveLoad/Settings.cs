@@ -11,7 +11,7 @@ using System.Xml.Serialization;
 
 namespace Specifications.Data.SaveLoad
 {
-    public static class SettingsForm
+    public static class Settings
     {
         public static SettingsData settingData;
 
